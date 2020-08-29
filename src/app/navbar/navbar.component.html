@@ -1,0 +1,19 @@
+<div class="navBar">
+    <div id="logo"></div>
+    <div id="heading"><a routerLink="/">AppChat</a></div>
+    <div class="links">
+    <span>
+        <a *ngIf="!(user | async)?.uid" routerLink="/login">Login</a>
+    </span>
+    <span>
+        <a *ngIf="!(user | async)?.uid" routerLink="/signup" >SignUp</a>
+    </span>
+    <span>
+        <aspan id="userEmail"  *ngIf="(user | async)?.uid">Hello, {{ userEmail }}</aspan>
+    </span>
+    <span>
+        <a *ngIf="(user | async)?.uid" style="cursor: pointer;" (click)="logout()">Logout</a>
+    </span>
+</div> 
+</div>
+
